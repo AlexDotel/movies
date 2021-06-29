@@ -99,10 +99,10 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           Container(
             width: ssize.width*0.70,
-            child: Divider(height: 50, color: Colors.black87,)
+            child: Divider(height: ssize.width*0.05, color: Colors.black87,)
           ),
           Text('Trending Movies', style: esTitle),
-          SizedBox(height: 20),
+          SizedBox(height: ssize.width*0.05),
           
           StreamBuilder(
             stream: provedor.stream,
@@ -110,9 +110,12 @@ class HomePage extends StatelessWidget {
 
               if(snapshot.hasData){
 
-                return HorizontalScroll(
-                  peliculas: snapshot.data,
-                  metodo: provedor.getTrending
+                return Container(
+                  height: ssize.height*0.20,
+                  child: HorizontalScroll(
+                    peliculas: snapshot.data,
+                    metodo: provedor.getTrending
+                  ),
                 );
 
               }else{

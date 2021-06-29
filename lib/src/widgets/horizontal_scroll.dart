@@ -37,7 +37,7 @@ class HorizontalScroll extends StatelessWidget {
 
 
     return Container(
-      height: ssize.height*0.24,
+      height: ssize.height*0.20,
       child: PageView.builder(
         pageSnapping: false,
         scrollDirection: Axis.horizontal,
@@ -71,7 +71,7 @@ class HorizontalScroll extends StatelessWidget {
                     image: NetworkImage(pelicula.getPoster()),
                     placeholder: AssetImage('assets/img/holder_pop.png'),
                     fit: BoxFit.cover,
-                    height: 150,
+                    height: ssize.height*0.15,
                   ),
                 ),
               ),
